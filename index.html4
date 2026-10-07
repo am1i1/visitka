@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.2.4.1 (Linux)"/>
+	<meta name="created" content="2026-10-06T13:22:30.790521380"/>
+	<meta name="changed" content="2026-10-06T13:22:43.050619210"/>
+</head>
+<body lang="ru-RU" dir="ltr"><p style="margin-bottom: 0cm">&lt;!DOCTYPE
+html&gt;</p>
+<p style="margin-bottom: 0cm">&lt;html lang=&quot;ru&quot;&gt;</p>
+<p style="margin-bottom: 0cm">&lt;head&gt;</p>
+<p style="margin-bottom: 0cm">    &lt;meta charset=&quot;UTF-8&quot;&gt;</p>
+<p style="margin-bottom: 0cm">    &lt;meta name=&quot;viewport&quot;
+content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</p>
+<p style="margin-bottom: 0cm">    &lt;title&gt;Амина |
+Сайт-визитка&lt;/title&gt;</p>
+<p style="margin-bottom: 0cm">    &lt;link rel=&quot;stylesheet&quot;
+href=&quot;style.css&quot;&gt;</p>
+<p style="margin-bottom: 0cm">    &lt;link
+href=&quot;https://googleapis.com&quot; rel=&quot;stylesheet&quot;&gt;</p>
+<p style="margin-bottom: 0cm">&lt;/head&gt;</p>
+<p style="margin-bottom: 0cm">&lt;body&gt;</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm">    &lt;div class=&quot;card&quot;&gt;</p>
+<p style="margin-bottom: 0cm">        &lt;div class=&quot;card-header&quot;&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;!-- Здесь можно
+указать путь к твоему фото, пока тут
+стандартная аватарка --&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;div
+class=&quot;avatar&quot;&gt;А&lt;/div&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;h1&gt;Амина&lt;/h1&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;p
+class=&quot;subtitle&quot;&gt;Студентка почтовой
+связи&lt;/p&gt;</p>
+<p style="margin-bottom: 0cm">        &lt;/div&gt;</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm">        &lt;div class=&quot;card-body&quot;&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;h2&gt;О себе&lt;/h2&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;p&gt;Привет! Меня
+зовут Амина. Я учусь в коллеже по
+специальности «Почтовая связь». Увлекаюсь
+изучением современных логистических
+систем, организацией почтовых отправлений
+и цифровизацией сервисов.&lt;/p&gt;</p>
+<p style="margin-bottom: 0cm">            
+</p>
+<p style="margin-bottom: 0cm">            &lt;h2&gt;Мой
+колледж&lt;/h2&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;p&gt;Приобретаю
+профессиональные навыки в сфере
+телекоммуникаций, почтовой логистики
+и клиентского сервиса. Стремлюсь
+развивать сферу связи и делать её удобнее
+для людей.&lt;/p&gt;</p>
+<p style="margin-bottom: 0cm">        &lt;/div&gt;</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm">        &lt;div class=&quot;card-footer&quot;&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;h2&gt;Контакты&lt;/h2&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;div
+class=&quot;social-links&quot;&gt;</p>
+<p style="margin-bottom: 0cm">                &lt;a href=&quot;#&quot;
+class=&quot;btn&quot;&gt;Telegram&lt;/a&gt;</p>
+<p style="margin-bottom: 0cm">                &lt;a href=&quot;#&quot;
+class=&quot;btn&quot;&gt;VK&lt;/a&gt;</p>
+<p style="margin-bottom: 0cm">                &lt;a
+href=&quot;mailto:amina@example.com&quot; class=&quot;btn
+email-btn&quot;&gt;Email&lt;/a&gt;</p>
+<p style="margin-bottom: 0cm">            &lt;/div&gt;</p>
+<p style="margin-bottom: 0cm">        &lt;/div&gt;</p>
+<p style="margin-bottom: 0cm">    &lt;/div&gt;</p>
+<p style="margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-bottom: 0cm">&lt;/body&gt;</p>
+<p style="margin-bottom: 0cm">&lt;/html&gt;</p>
+</body>
+</html>
