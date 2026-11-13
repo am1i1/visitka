@@ -1,85 +1,474 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 24.2.4.1 (Linux)"/>
-	<meta name="created" content="2026-10-06T13:22:30.790521380"/>
-	<meta name="changed" content="2026-10-06T13:22:43.050619210"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Новогодняя открытка 2027 · Огненная Коза</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Georgia', 'Times New Roman', serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0b1a1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Динамический фон: снегопад + мерцающие огоньки */
+        .snow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background: radial-gradient(circle at 20% 30%, #1e3a2e, #0a1c1a 80%);
+        }
+
+        .snowflake {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            user-select: none;
+            pointer-events: none;
+            font-size: 1.2em;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+
+        .ember {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ffb347;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #ff8c00, 0 0 24px #ff4500;
+            opacity: 0.6;
+            animation: floatEmber 8s infinite ease-in-out;
+        }
+
+        @keyframes floatEmber {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+            50% { transform: translateY(-30px) scale(1.3); opacity: 0.9; }
+        }
+
+        /* Основной контейнер */
+        .card-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 480px;
+            margin: 20px;
+            background: rgba(15, 30, 25, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 48px 48px 32px 32px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.7), 0 0 60px rgba(200, 50, 50, 0.3);
+            padding: 28px 24px 32px;
+            transition: all 0.4s;
+        }
+
+        /* Декоративная еловая ветвь (символическая) */
+        .pine-branch {
+            position: absolute;
+            top: -18px;
+            left: 10px;
+            font-size: 2.4rem;
+            opacity: 0.6;
+            transform: rotate(-15deg);
+            filter: drop-shadow(0 0 6px #2e6b4a);
+        }
+
+        .pine-branch-right {
+            position: absolute;
+            top: -10px;
+            right: 5px;
+            font-size: 2rem;
+            opacity: 0.5;
+            transform: rotate(25deg) scaleX(-1);
+            filter: drop-shadow(0 0 6px #2e6b4a);
+        }
+
+        /* Шапка */
+        .title-main {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .title-main h1 {
+            font-size: 2rem;
+            color: #ffd966;
+            text-shadow: 0 0 15px #b8860b, 2px 2px 0 #8b0000;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .title-main .sub {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 4px;
+            opacity: 0.8;
+        }
+
+        /* Коза / Овца — символ 2027 */
+        .zodiac-badge {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 10px 0 20px;
+            font-size: 2.8rem;
+            filter: drop-shadow(0 0 10px rgba(255, 200, 100, 0.7));
+        }
+
+        .zodiac-badge span {
+            animation: softBounce 3s infinite;
+        }
+09:11
+.zodiac-badge span:nth-child(2) { animation-delay: 0.6s; }
+
+        @keyframes softBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Форма ввода */
+        .input-group {
+            margin: 20px 0 24px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #f0e6d2;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 60px;
+            border: 2px solid #b8860b;
+            background: rgba(255, 255, 240, 0.95);
+            font-size: 1.2rem;
+            text-align: center;
+            color: #2d1b0e;
+            outline: none;
+            transition: 0.3s;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .input-group input:focus {
+            border-color: #ffd966;
+            box-shadow: 0 0 25px #ffb347;
+        }
+
+        .input-group input::placeholder {
+            color: #9b7b5e;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        /* Кнопка */
+        .btn {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 60px;
+            background: linear-gradient(145deg, #b22222, #8b0000);
+            color: #ffd966;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 10px 0 #4a0e0e, 0 6px 20px rgba(0,0,0,0.6);
+            transition: all 0.15s ease;
+            text-transform: uppercase;
+            border: 1px solid #d4af37;
+        }
+
+        .btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 4px 0 #4a0e0e, 0 6px 20px rgba(0,0,0,0.6);
+        }
+
+        /* Вторая страница (открытка) */
+        .greeting-card {
+            display: none;
+            text-align: center;
+        }
+
+        .greeting-card .name-display {
+            font-size: 1.8rem;
+            color: #ffd966;
+            font-weight: 700;
+            margin: 10px 0 5px;
+            text-shadow: 0 0 10px #b8860b;
+            word-break: break-word;
+        }
+
+        .greeting-text {
+            background: rgba(255, 250, 240, 0.1);
+            border-left: 4px solid #d4af37;
+            border-right: 4px solid #d4af37;
+            padding: 18px 14px;
+            margin: 18px 0 16px;
+            border-radius: 24px;
+            color: #f5f5dc;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-style: italic;
+            backdrop-filter: blur(4px);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        .greeting-text p {
+            margin: 6px 0;
+        }
+
+        .greeting-text .highlight {
+            color: #ffb347;
+            font-weight: bold;
+        }
+
+        /* Мультяшные персонажи */
+        .characters {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 8px;
+            margin: 18px 0 10px;
+            font-size: 2.8rem;
+            filter: drop-shadow(0 8px 8px rgba(0,0,0,0.6));
+        }
+
+        .characters span {
+            display: inline-block;
+            animation: sway 2.8s infinite alternate;
+        }
+
+        .characters span:nth-child(2) { animation-delay: 0.3s; font-size: 3.2rem; }
+        .characters span:nth-child(3) { animation-delay: 0.7s; }
+        .characters span:nth-child(4) { animation-delay: 1s; }
+        .characters span:nth-child(5) { animation-delay: 1.4s; }
+
+        @keyframes sway {
+            0% { transform: rotate(-6deg) translateY(0); }
+            100% { transform: rotate(6deg) translateY(-6px); }
+        }
+
+        /* Следы козы / снежинки */
+        .footprints {
+            color: #a5c9b0;
+            font-size: 1.2rem;
+            letter-spacing: 10px;
+09:11
+opacity: 0.7;
+            margin: 6px 0;
+        }
+
+        /* Кнопка "назад" */
+        .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: #bfa87a;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.2s;
+        }
+
+        .back-link:hover {
+            color: #ffd966;
+        }
+
+        /* Скрытие/показ */
+        .hidden { display: none; }
+
+        /* Адаптив */
+        @media (max-width: 400px) {
+            .card-container { padding: 20px 16px 24px; }
+            .title-main h1 { font-size: 1.7rem; }
+            .characters { font-size: 2.2rem; gap: 4px; }
+            .greeting-text { font-size: 1rem; padding: 14px 10px; }
+        }
+    </style>
 </head>
-<body lang="ru-RU" dir="ltr"><p style="margin-bottom: 0cm">&lt;!DOCTYPE
-html&gt;</p>
-<p style="margin-bottom: 0cm">&lt;html lang=&quot;ru&quot;&gt;</p>
-<p style="margin-bottom: 0cm">&lt;head&gt;</p>
-<p style="margin-bottom: 0cm">    &lt;meta charset=&quot;UTF-8&quot;&gt;</p>
-<p style="margin-bottom: 0cm">    &lt;meta name=&quot;viewport&quot;
-content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</p>
-<p style="margin-bottom: 0cm">    &lt;title&gt;Амина |
-Сайт-визитка&lt;/title&gt;</p>
-<p style="margin-bottom: 0cm">    &lt;link rel=&quot;stylesheet&quot;
-href=&quot;style.css&quot;&gt;</p>
-<p style="margin-bottom: 0cm">    &lt;link
-href=&quot;https://googleapis.com&quot; rel=&quot;stylesheet&quot;&gt;</p>
-<p style="margin-bottom: 0cm">&lt;/head&gt;</p>
-<p style="margin-bottom: 0cm">&lt;body&gt;</p>
-<p style="margin-bottom: 0cm"><br/>
+<body>
 
-</p>
-<p style="margin-bottom: 0cm">    &lt;div class=&quot;card&quot;&gt;</p>
-<p style="margin-bottom: 0cm">        &lt;div class=&quot;card-header&quot;&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;!-- Здесь можно
-указать путь к твоему фото, пока тут
-стандартная аватарка --&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;div
-class=&quot;avatar&quot;&gt;А&lt;/div&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;h1&gt;Амина&lt;/h1&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;p
-class=&quot;subtitle&quot;&gt;Студентка почтовой
-связи&lt;/p&gt;</p>
-<p style="margin-bottom: 0cm">        &lt;/div&gt;</p>
-<p style="margin-bottom: 0cm"><br/>
+<!-- Динамический фон -->
+<div class="snow-bg" id="snowBg"></div>
 
-</p>
-<p style="margin-bottom: 0cm">        &lt;div class=&quot;card-body&quot;&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;h2&gt;О себе&lt;/h2&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;p&gt;Привет! Меня
-зовут Амина. Я учусь в коллеже по
-специальности «Почтовая связь». Увлекаюсь
-изучением современных логистических
-систем, организацией почтовых отправлений
-и цифровизацией сервисов.&lt;/p&gt;</p>
-<p style="margin-bottom: 0cm">            
-</p>
-<p style="margin-bottom: 0cm">            &lt;h2&gt;Мой
-колледж&lt;/h2&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;p&gt;Приобретаю
-профессиональные навыки в сфере
-телекоммуникаций, почтовой логистики
-и клиентского сервиса. Стремлюсь
-развивать сферу связи и делать её удобнее
-для людей.&lt;/p&gt;</p>
-<p style="margin-bottom: 0cm">        &lt;/div&gt;</p>
-<p style="margin-bottom: 0cm"><br/>
+<div class="card-container" id="cardContainer">
+    <!-- Декоративные ветви -->
+    <div class="pine-branch">🌿 </div>
+    <div class="pine-branch-right">🌿 </div>
 
-</p>
-<p style="margin-bottom: 0cm">        &lt;div class=&quot;card-footer&quot;&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;h2&gt;Контакты&lt;/h2&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;div
-class=&quot;social-links&quot;&gt;</p>
-<p style="margin-bottom: 0cm">                &lt;a href=&quot;#&quot;
-class=&quot;btn&quot;&gt;Telegram&lt;/a&gt;</p>
-<p style="margin-bottom: 0cm">                &lt;a href=&quot;#&quot;
-class=&quot;btn&quot;&gt;VK&lt;/a&gt;</p>
-<p style="margin-bottom: 0cm">                &lt;a
-href=&quot;mailto:amina@example.com&quot; class=&quot;btn
-email-btn&quot;&gt;Email&lt;/a&gt;</p>
-<p style="margin-bottom: 0cm">            &lt;/div&gt;</p>
-<p style="margin-bottom: 0cm">        &lt;/div&gt;</p>
-<p style="margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="margin-bottom: 0cm"><br/>
+    <!-- СТРАНИЦА 1: Ввод имени -->
+    <div id="pageInput">
+        <div class="title-main">
+            <h1>2027</h1>
+            <div class="sub">Огненная Коза · Северное сияние</div>
+        </div>
 
-</p>
-<p style="margin-bottom: 0cm">&lt;/body&gt;</p>
-<p style="margin-bottom: 0cm">&lt;/html&gt;</p>
+        <div class="zodiac-badge">
+            <span>🐐 </span>
+            <span>🔥 </span>
+            <span>❄️ </span>
+        </div>
+
+        <div class="input-group">
+            <label for="nameInput">Как к вам обращаться?</label>
+            <input type="text" id="nameInput" placeholder="Например: Анечка, Саша, Дед Мороз..." maxlength="30" autocomplete="off">
+        </div>
+
+        <button class="btn" id="getCardBtn">Получить открытку</button>
+
+        <!-- Милые зверушки и снегурочка для настроения -->
+        <div class="characters" style="font-size: 2rem; margin-top: 24px;">
+            <span>🐻‍❄️ </span>
+            <span>🦌 </span>
+            <span>⛄ </span>
+            <span>🐇 </span>
+        </div>
+    </div>
+
+    <!-- СТРАНИЦА 2: Открытка -->
+    <div id="pageGreeting" class="greeting-card">
+        <div class="zodiac-badge" style="margin-bottom: 0;">
+            <span>🐐 </span>
+            <span>🔥 </span>
+            <span>❄️ </span>
+        </div>
+
+        <div class="name-display" id="displayName">Дорогой друг</div>
+
+        <div class="greeting-text">
+            <p>Пусть <span class="highlight">Огненная Коза</span> принесёт в дом тепло,</p>
+            <p>а козы Тора защитят от всех невзгод.</p>
+            <p>С Новым 2027 годом! 🎄 ✨ </p>
+        </div>
+
+        <!-- Персонажи: Дед Мороз, Снегурочка, зверята, коза -->
+        <div class="characters">
+            <span>🎅 </span>
+            <span>👧 </span>
+            <span>🐐 </span>
+            <span>🐇 </span>
+            <span>🦊 </span>
+        </div>
+
+        <div class="footprints">
+            🐾  🐾  🐾 
+        </div>
+
+        <div class="back-link" id="backBtn">← изменить имя</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ----- 1. Генерация снежинок и угольков -----
+        const snowBg = document.getElementById('snowBg');
+        const snowflakeChars = ['❄', '❅', '❆', '•', '⋆'];
+        const emberColors = ['#ff8c00', '#ffb347', '#ff4500'];
+
+        // Снежинки
+        for (let i = 0; i < 60; i++) {
+            const flake = document.createElement('div');
+            flake.className = 'snowflake';
+            flake.textContent = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+            flake.style.left = Math.random() * 100 + '%';
+            flake.style.top = '-10%';
+            flake.style.fontSize = (Math.random() * 16 + 10) + 'px';
+            flake.style.opacity = Math.random() * 0.5 + 0.4;
+            flake.style.animationDuration = (Math.random() * 8 + 6) + 's';
+            flake.style.animationDelay = (Math.random() * -20) + 's';
+            snowBg.appendChild(flake);
+        }
+
+        // Угольки (огненная стихия)
+        for (let i = 0; i < 20; i++) {
+09:11
+const ember = document.createElement('div');
+            ember.className = 'ember';
+            ember.style.left = Math.random() * 100 + '%';
+            ember.style.top = Math.random() * 100 + '%';
+            ember.style.width = (Math.random() * 6 + 3) + 'px';
+            ember.style.height = ember.style.width;
+            ember.style.background = emberColors[Math.floor(Math.random() * emberColors.length)];
+            ember.style.boxShadow = `0 0 ${Math.random() * 15 + 8}px ${ember.style.background}`;
+            ember.style.animationDuration = (Math.random() * 10 + 6) + 's';
+            ember.style.animationDelay = (Math.random() * -10) + 's';
+            snowBg.appendChild(ember);
+        }
+
+        // ----- 2. Логика ввода и отображения -----
+        const pageInput = document.getElementById('pageInput');
+        const pageGreeting = document.getElementById('pageGreeting');
+        const nameInput = document.getElementById('nameInput');
+        const getCardBtn = document.getElementById('getCardBtn');
+        const displayName = document.getElementById('displayName');
+        const backBtn = document.getElementById('backBtn');
+
+        // Функция получения открытки
+        function showGreeting() {
+            const rawName = nameInput.value.trim();
+            // Если имя не введено, подставляем "Дорогой друг"
+            const finalName = rawName || 'Дорогой друг';
+            displayName.textContent = finalName;
+
+            pageInput.style.display = 'none';
+            pageGreeting.style.display = 'block';
+
+            // Небольшая анимация появления
+            pageGreeting.style.animation = 'none';
+            pageGreeting.offsetHeight; // reflow
+            pageGreeting.style.animation = 'softBounce 0.5s';
+        }
+
+        // Функция возврата
+        function showInput() {
+            pageGreeting.style.display = 'none';
+            pageInput.style.display = 'block';
+        }
+
+        // Обработчики
+        getCardBtn.addEventListener('click', showGreeting);
+
+        // Enter в поле ввода
+        nameInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                showGreeting();
+            }
+        });
+
+        backBtn.addEventListener('click', showInput);
+
+        // Фокус на поле при загрузке
+        window.addEventListener('load', function() {
+            nameInput.focus();
+        });
+
+        // Небольшая защита от XSS (так как имя выводится как текст, это безопасно)
+        // Но добавим простую проверку на пустоту внутри showGreeting уже есть
+    })();
+</script>
 </body>
 </html>
